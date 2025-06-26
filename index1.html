@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ayush | Ethical Hacker & Photoshop Expert</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <!-- NAVIGATION -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Ayush Logo" />
+        <a href="#">AyushDev</a>
+      </div>
+      <div class="nav-links">
+        <a class="selected" href="index.html">Home</a>
+        <a href="works.html">Works</a>
+        <a href="online-course.html">Course</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+        
+
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="main">
+    <div class="info">
+      <h1>Hi, I'm Ayush<br><span>Ethical Hacker & Photoshop Expert</span></h1>
+      <p>I explore the dark corners of the internet and design bright, impactful visuals. Merging cybersecurity with creative design is not just my work—it's my passion.</p>
+      <a href="assets/resume.pdf" download>
+        <button><i class='bx bx-download'></i> Download Resume</button>
+      </a>
+    </div>
+    <img src="assets/profile-1.png" alt="Ayush Profile Picture">
+  </section>
+
+  <!-- RECENT BLOG POSTS -->
+ <!-- index.html me recent blogs section -->
+<section class="recent">
+  <div class="header">
+    <h2>🧠 Recent Blog Posts</h2>
+    <a href="blog.html">View All</a>
+  </div>
+  <div class="posts" id="recent-posts"></div>
+</section>
+
+<script>
+  fetch('blog-data.json')
+    .then(res => res.json())
+    .then(data => {
+      const recentPosts = data.slice(0, 2); // sirf 2 latest dikhaye
+      const container = document.getElementById('recent-posts');
+
+      container.innerHTML = recentPosts.map(post => `
+        <article class="post-item">
+          <h3><a href="${post.link}">${post.title}</a></h3>
+          <div class="info">
+            <time datetime="${post.date}">${new Date(post.date).toLocaleDateString('en-GB')}</time>
+            <span>|</span>
+            <span>${post.category}</span>
+          </div>
+          <p>${post.summary}</p>
+        </article>
+      `).join('');
+    });
+</script>
+
+  <!-- FEATURED PROJECTS -->
+  <section class="featured">
+    <div class="separator">
+      <h2>🚀 Featured Projects</h2>
+    </div>
+    <div class="projects">
+      <div class="item">
+        <img src="assets/graphic-1.jpg" alt="Dark Web Scanner Project">
+        <div class="details">
+          <h3>YouTube Thumbnail Design Secrets 🔥 Photoshop </h3>
+          <div class="item-info">
+            <span class="year-badge">2024</span>
+            <span>Photoshop</span>
+          </div>
+          <p>“Professional Thumbnail Kaise Banaye? | Step-by-Step Guide”</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/wedding-1.jpg" alt="Cyber-Themed Poster Pack">
+        <div class="details">
+          <h3>How to Edit Wedding Photos Like a Pro</h3>
+          <div class="item-info">
+            <span class="year-badge">2024</span>
+            <span>Photoshop</span>
+          </div>
+          <p>“Cinematic Wedding Photo Edit | Lightroom & Photoshop Tutorial”</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/flex-1.jpg" alt="Login Page Pen Test">
+        <div class="details">
+          <h3>“YouTube Thumbnail Masterclass | Full Secret Guide”</h3>
+          <div class="item-info">
+            <span class="year-badge">2025</span>
+            <span>Photoshop</span>
+          </div>
+          <p></p>
+        </div>
+      </div>
+    </div>
+  </section>
+<body>
+<!-- ONLINE COURSES -->
+<section class="courses">
+  <div class="separator">
+    <h2>🎓 Online Courses</h2>
+    <p>Master Ethical Hacking & Photoshop from scratch with Ayush</p>
+  </div>
+  <div class="course-list">
+    <div class="course-item">
+      <img src="assets/hacking-course.jpg" alt="Ethical Hacking Course">
+      <div class="course-details">
+        <h3>Ethical Hacking Bootcamp</h3>
+        <p>Learn the fundamentals of cybersecurity, network penetration, and ethical hacking tools in a beginner-friendly format.</p>
+        <span class="price">₹999</span>
+        <a href="#" class="btn">Buy Now</a>
+      </div>
+    </div>
+    <div class="course-item">
+      <img src="assets/photoshop-course.jpg" alt="Photoshop Mastery">
+      <div class="course-details">
+        <h3>Photoshop Mastery Course</h3>
+        <p>From beginner to pro: learn advanced editing, thumbnails, wedding retouching, and graphic manipulation in Photoshop.</p>
+        <span class="price">₹799</span>
+        <a href="#" class="btn">Enroll Now</a>
+      </div>
+    </div>
+  </div>
+</section>
+</body>
+
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="socials">
+      <a href="#"><i class='bx bxl-facebook-square'></i></a>
+      <a href="#"><i class='bx bxl-instagram'></i></a>
+      <a href="#"><i class='bx bxl-twitter'></i></a>
+      <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+    </div>
+    <p>© 2025 Ayush | Ethical Hacker & Photoshop Expert. All rights reserved.</p>
+  </footer>
+</body>
+</html>

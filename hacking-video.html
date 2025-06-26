@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Video Projects | Ayush</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Poppins', sans-serif;
+    }
+    body {
+      background: #ffffff;
+      color: #222;
+    }
+    header {
+      background: #f8f8f8;
+      border-bottom: 1px solid #ddd;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    }
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 20px 50px;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .logo img {
+      height: 40px;
+    }
+    .logo a {
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+      color: #00bfa6;
+    }
+    .nav-links a {
+      color: #333;
+      text-decoration: none;
+      margin: 0 12px;
+      font-weight: 500;
+    }
+    .nav-links a.selected,
+    .nav-links a:hover {
+      color: #00bfa6;
+    }
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 30px 20px;
+    }
+    .featured-video {
+      margin-bottom: 50px;
+    }
+    .featured-video video {
+      width: 100%;
+      max-height: 600px;
+      border-radius: 12px;
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    }
+    .download-btn {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 25px;
+      background: #00bfa6;
+      color: #fff;
+      border-radius: 8px;
+      font-weight: bold;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+    .download-btn:hover {
+      background: #00a88f;
+    }
+    .video-gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 25px;
+    }
+    .video-item {
+      background: #f9f9f9;
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.06);
+      text-align: center;
+    }
+    .video-item video {
+      width: 100%;
+      border-radius: 8px;
+      margin-bottom: 10px;
+    }
+    .video-item .download-btn {
+      font-size: 0.9rem;
+    }
+    footer {
+      text-align: center;
+      background: #f0f0f0;
+      color: #777;
+      padding: 30px 20px;
+      margin-top: 60px;
+      border-top: 1px solid #ddd;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Ayush Logo" />
+        <a href="#">AyushDev</a>
+      </div>
+      <div class="nav-links">
+        <a class="selected" href="index.html">Home</a>
+        <a href="works.html">Works</a>
+        <a href="online-course.html">Course</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <div class="container">
+  
+
+    <section class="video-gallery">
+      <div class="video-item">
+        <video src="assets/video-1.mp4" controls></video>
+        <a class="download-btn" href="assets/video-1.mp4" download>
+          <i class='bx bx-download'></i> Download
+        </a>
+      </div>
+      <div class="video-item">
+        <video src="assets/video-2.mp4" controls></video>
+        <a class="download-btn" href="assets/video-2.mp4" download>
+          <i class='bx bx-download'></i> Download
+        </a>
+      </div>
+      <div class="video-item">
+        <video src="assets/video-3.mp4" controls></video>
+        <a class="download-btn" href="assets/video-3.mp4" download>
+          <i class='bx bx-download'></i> Download
+        </a>
+      </div>
+      <div class="video-item">
+        <video src="assets/video-4.mp4" controls></video>
+        <a class="download-btn" href="assets/video-4.mp4" download>
+          <i class='bx bx-download'></i> Download
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <footer>
+    &copy; 2025 Ayush | Ethical Hacker & Photoshop Expert. All rights reserved.
+  </footer>
+
+</body>
+</html>

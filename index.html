@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ayush | Ethical Hacker & Photoshop Expert</title>
+  <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+  <style>
+    /* ===== RESET ===== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f5f5f5;
+      color: #222;
+      scroll-behavior: smooth;
+    }
+
+    body.dark {
+      background: #121212;
+      color: #f5f5f5;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: #fff;
+      padding: 1rem 2rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+      position: sticky;
+      top: 0;
+      z-index: 999;
+    }
+
+    body.dark header {
+      background: #1e1e1e;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo img {
+      width: 40px;
+    }
+
+    .logo a {
+      font-size: 1.4rem;
+      font-weight: 600;
+    }
+
+    .nav-links a {
+      margin-left: 20px;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    .nav-links a.selected,
+    .nav-links a:hover {
+      color: #007aff;
+    }
+
+    /* ===== MAIN HERO ===== */
+    .main {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 3rem 2rem;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .main .info {
+      max-width: 600px;
+    }
+
+    .main h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .main h1 span {
+      color: #007aff;
+    }
+
+    .main p {
+      font-size: 1.1rem;
+      margin-bottom: 1.5rem;
+    }
+
+    .main button {
+      padding: 10px 20px;
+      background: #007aff;
+      color: #fff;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .main img {
+      max-width: 280px;
+      border-radius: 10px;
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 2rem;
+    }
+
+    .separator {
+      margin-bottom: 1rem;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+    }
+
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    /* ===== RECENT POSTS ===== */
+    .posts {
+      display: grid;
+      gap: 1rem;
+    }
+
+    .post-item {
+      padding: 1rem;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    }
+
+    body.dark .post-item {
+      background: #1e1e1e;
+    }
+
+    .post-item h3 {
+      margin-bottom: 0.5rem;
+    }
+
+    .post-item .info {
+      font-size: 0.9rem;
+      color: gray;
+      margin-bottom: 0.5rem;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .item {
+      background: #fff;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    body.dark .item {
+      background: #1e1e1e;
+    }
+
+    .item img {
+      width: 100%;
+      height: auto;
+    }
+
+    .details {
+      padding: 1rem;
+    }
+
+    .item-info {
+      font-size: 0.85rem;
+      color: gray;
+      margin-bottom: 0.5rem;
+      display: flex;
+      gap: 10px;
+    }
+
+    .year-badge {
+      background: #007aff;
+      color: #fff;
+      padding: 2px 6px;
+      border-radius: 5px;
+    }
+
+    /* ===== COURSES ===== */
+    .course-list {
+      display: grid;
+      gap: 1.5rem;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    }
+
+    .course-item {
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+    }
+
+    body.dark .course-item {
+      background: #1e1e1e;
+    }
+
+    .course-details {
+      padding: 1rem;
+    }
+
+    .price {
+      font-weight: bold;
+      color: #007aff;
+      margin: 0.5rem 0;
+      display: inline-block;
+    }
+
+    .btn {
+      display: inline-block;
+      background: #007aff;
+      color: #fff;
+      padding: 8px 14px;
+      border-radius: 6px;
+      font-size: 0.95rem;
+    }
+
+    /* ===== FOOTER ===== */
+    footer {
+      text-align: center;
+      padding: 2rem;
+      background: #f0f0f0;
+      color: #333;
+    }
+
+    body.dark footer {
+      background: #111;
+      color: #ccc;
+    }
+
+    .socials {
+      margin-bottom: 1rem;
+    }
+
+    .socials a {
+      margin: 0 10px;
+      font-size: 1.5rem;
+      color: inherit;
+    }
+
+    /* ===== RESPONSIVE ===== */
+    @media (max-width: 768px) {
+      .main {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .main img {
+        margin-top: 20px;
+      }
+
+      .nav-links {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVIGATION -->
+  <header>
+    <nav>
+      <div class="logo">
+        <img src="assets/logo.png" alt="Ayush Logo" />
+        <a href="#">AyushDev</a>
+      </div>
+          <div class="nav-links">
+       <a class="selected" href="index.html">Home</a>
+        <a href="works.html">Works</a>
+        <a href="online-course.html">Course</a>
+        <a href="blog.html">Blog</a>
+        <a href="about.html">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="main">
+    <div class="info">
+      <h1>Hi, I'm Ayush<br><span>Ethical Hacker & Photoshop Expert</span></h1>
+      <p>I explore the dark corners of the internet and design bright, impactful visuals. Merging cybersecurity with creative design is not just my work—it's my passion.</p>
+      <a href="assets/ayush-resume.png" download>
+        <button><i class='bx bx-download'></i> Download Resume</button>
+      </a>
+    </div>
+    <img src="assets/profile-1.png" alt="Ayush Profile Picture">
+  </section>
+
+   <!-- RECENT BLOG POSTS -->
+ <!-- index.html me recent blogs section -->
+<section class="recent">
+  <div class="header">
+    <h2>🧠 Recent Blog Posts</h2>
+    <a href="blog.html">View All</a>
+  </div>
+  <div class="posts" id="recent-posts"></div>
+</section>
+
+<script>
+  fetch('blog-data.json')
+    .then(res => res.json())
+    .then(data => {
+      const recentPosts = data.slice(0, 2); // sirf 2 latest dikhaye
+      const container = document.getElementById('recent-posts');
+
+      container.innerHTML = recentPosts.map(post => `
+        <article class="post-item">
+          <h3><a href="${post.link}">${post.title}</a></h3>
+          <div class="info">
+            <time datetime="${post.date}">${new Date(post.date).toLocaleDateString('en-GB')}</time>
+            <span>|</span>
+            <span>${post.category}</span>
+          </div>
+          <p>${post.summary}</p>
+        </article>
+      `).join('');
+    });
+</script>
+  <!-- FEATURED PROJECTS -->
+  <section class="featured">
+    <div class="separator">
+      <h2>🚀 Featured Projects</h2>
+    </div>
+    <div class="projects">
+      <div class="item">
+        <img src="assets/graphic-1.jpg" alt="Project">
+        <div class="details">
+          <h3>YouTube Thumbnail Design Secrets 🔥</h3>
+          <div class="item-info">
+            <span class="year-badge">2024</span>
+            <span>Photoshop</span>
+          </div>
+          <p>“Professional Thumbnail Kaise Banaye? | Step-by-Step Guide”</p>
+        </div>
+      </div>
+      <div class="item">
+        <img src="assets/wedding-1.jpg" alt="Wedding Edit">
+        <div class="details">
+          <h3>How to Edit Wedding Photos Like a Pro</h3>
+          <div class="item-info">
+            <span class="year-badge">2024</span>
+            <span>Photoshop</span>
+          </div>
+          <p>“Cinematic Wedding Photo Edit | Lightroom & Photoshop Tutorial”</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- COURSES -->
+  <section class="courses">
+    <div class="separator">
+      <h2>🎓 Online Courses</h2>
+      <p>Master Ethical Hacking & Photoshop from scratch with Ayush</p>
+    </div>
+    <div class="course-list">
+      <div class="course-item">
+        <img src="assets/hacking-course.jpg" alt="Hacking Course">
+        <div class="course-details">
+          <h3>Ethical Hacking Bootcamp</h3>
+          <p>Learn the fundamentals of cybersecurity, network penetration, and ethical hacking tools in a beginner-friendly format.</p>
+          <span class="price">₹999</span>
+          <a href="#" class="btn">Buy Now</a>
+        </div>
+      </div>
+      <div class="course-item">
+        <img src="assets/photoshop-course.jpg" alt="Photoshop Mastery">
+        <div class="course-details">
+          <h3>Photoshop Mastery Course</h3>
+          <p>From beginner to pro: learn advanced editing, thumbnails, wedding retouching, and graphic manipulation in Photoshop.</p>
+          <span class="price">₹799</span>
+          <a href="#" class="btn">Enroll Now</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="socials">
+      <a href="#"><i class='bx bxl-facebook-square'></i></a>
+      <a href="#"><i class='bx bxl-instagram'></i></a>
+      <a href="#"><i class='bx bxl-twitter'></i></a>
+      <a href="#"><i class='bx bxl-linkedin-square'></i></a>
+    </div>
+    <p>© 2025 Ayush | Ethical Hacker & Photoshop Expert. All rights reserved.</p>
+  </footer>
+
+  <!-- BLOG SCRIPT -->
+  <script>
+    fetch('blog-data.json')
+      .then(res => res.json())
+      .then(data => {
+        const recentPosts = data.slice(0, 2);
+        const container = document.getElementById('recent-posts');
+        container.innerHTML = recentPosts.map(post => `
+          <article class="post-item">
+            <h3><a href="${post.link}">${post.title}</a></h3>
+            <div class="info">
+              <time datetime="${post.date}">${new Date(post.date).toLocaleDateString('en-GB')}</time>
+              <span>|</span>
+              <span>${post.category}</span>
+            </div>
+            <p>${post.summary}</p>
+          </article>
+        `).join('');
+      });
+  </script>
+</body>
+</html>
